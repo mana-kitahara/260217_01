@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+:root {
+  --ui-bg: #f5e2f2;
+  --ui-sidebar: #fbf1f9;
+  --ui-button: #e8c0e1;
+  --ui-hover: #f0d6eb;
+  --ui-line: #e7d5e4;
+  --page-bg: #ffffff;
+  --page-line: #eaeaea;
+  --page-text: #3f3944;
+  --text-main: #4b454d;
+}
+
+[data-theme="dark"] {
+  --ui-bg: #201824;
+  --ui-sidebar: #2b2130;
+  --ui-button: #6f5474;
+  --ui-hover: #5f4a64;
+  --ui-line: #4e3f53;
+  --page-bg: #ffffff;
+  --page-line: #eaeaea;
+  --page-text: #3f3944;
+  --text-main: #f3eaf4;
+}
+
+@theme inline {
+  --color-ui-bg: var(--ui-bg);
+  --color-ui-sidebar: var(--ui-sidebar);
+  --color-ui-button: var(--ui-button);
+  --color-ui-hover: var(--ui-hover);
+  --color-ui-line: var(--ui-line);
+  --color-page-bg: var(--page-bg);
+  --color-page-line: var(--page-line);
+  --color-page-text: var(--page-text);
+  --color-text-main: var(--text-main);
+}
+
+body {
+  background: var(--ui-bg);
+  color: var(--text-main);
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+button {
+  cursor: pointer;
+}
+
+input,
+select,
+textarea {
+  color: var(--page-text);
+}
+
+[data-theme="dark"] .bg-white,
+[data-theme="dark"] .bg-\[var\(--page-bg\)\] {
+  color: var(--page-text);
+}
+
+[data-theme="dark"] button.bg-white,
+[data-theme="dark"] a.bg-white,
+[data-theme="dark"] button.bg-\[var\(--page-bg\)\],
+[data-theme="dark"] a.bg-\[var\(--page-bg\)\] {
+  color: var(--page-text);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #6b6471;
+}
+
+button {
+  color: var(--text-main);
+}
+
+.soft-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--ui-button) transparent;
+}
+
+.soft-scroll::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.soft-scroll::-webkit-scrollbar-thumb {
+  background: var(--ui-button);
+  border-radius: 9999px;
+}
+
+.line-paper {
+  background: repeating-linear-gradient(
+    0deg,
+    var(--page-bg) 0px,
+    var(--page-bg) 38px,
+    var(--page-line) 39px,
+    var(--page-bg) 40px
+  );
+}
+
+.ProseMirror h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0.35rem 0;
+}
+
+.ProseMirror ul {
+  list-style: disc;
+  margin-left: 1.25rem;
+}
+
+.ProseMirror p {
+  min-height: 1.4em;
+}
+
+.ProseMirror {
+  color: var(--page-text);
+}
+
+.ProseMirror a {
+  color: var(--text-main);
+  text-decoration: underline;
+}
+
+.ProseMirror img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+}
+
+.ProseMirror table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+.ProseMirror th,
+.ProseMirror td {
+  border: 1px solid var(--ui-line);
+  padding: 0.4rem 0.5rem;
+  vertical-align: top;
+}
+
+.ProseMirror th {
+  background: var(--ui-hover);
+  font-weight: 700;
+}
